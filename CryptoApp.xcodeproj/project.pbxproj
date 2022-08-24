@@ -186,8 +186,8 @@
 		B590FF4928B5FD7200EF2D04 /* CoinImage */ = {
 			isa = PBXGroup;
 			children = (
-				B590FF4A28B5FD8900EF2D04 /* CoinImageView.swift */,
 				B590FF4E28B6026E00EF2D04 /* CoinImageViewModel.swift */,
+				B590FF4A28B5FD8900EF2D04 /* CoinImageView.swift */,
 			);
 			path = CoinImage;
 			sourceTree = "<group>";

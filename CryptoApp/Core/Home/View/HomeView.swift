@@ -20,8 +20,6 @@ struct HomeView: View {
                 HomeHeader(showPortfolio: $showPortfolio)
                     columnTitle
                 
-                //????
-                
                 if !showPortfolio {
                     allCoinsList
                         .transition(.move(edge: .leading))
@@ -31,7 +29,6 @@ struct HomeView: View {
                     portfolioCoinsList
                         .transition(.move(edge: .trailing))
                 }
-                
                 Spacer(minLength: 0)
             }
         }
