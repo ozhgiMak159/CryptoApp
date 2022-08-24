@@ -14,25 +14,52 @@ class CoinImageViewModel: ObservableObject {
     @Published var isLoading: Bool = true
     
     private let coin: CoinModel
-    private let dataService: CoinImageServices
-    private var cancellables = Set<AnyCancellable>()
-    
+    private let coinImageServices: CoinNetworkImage
+    private var cancellable = Set<AnyCancellable>()
     
     init(coin: CoinModel) {
         self.coin = coin
-        self.dataService = CoinImageServices(coin: coin)
+        self.coinImageServices = CoinNetworkImage(coin: coin)
         self.addSubscribes()
         self.isLoading = true
     }
     
     private func addSubscribes() {
-        dataService.$image
+        coinImageServices.$image
             .sink { [weak self] (_) in
                 self?.isLoading = false
             } receiveValue: { [weak self] (returnedImage) in
                 self?.image = returnedImage
             }
-            .store(in: &cancellables)
-
+            .store(in: &cancellable)
     }
 }
+
+/*
+ class CoinImageServices {
+     
+     @Published var image: UIImage? = nil
+     
+     private var imageSubscription: AnyCancellable?
+     private let coin: CoinModel
+     
+     init(coin: CoinModel) {
+         self.coin = coin
+         getCoinImage()
+     }
+     
+     private func getCoinImage() {
+         guard let url = URL(string: coin.image) else { return }
+         
+         imageSubscription = NetworkManager.shared.download(url: url)
+             .tryMap({ (data) -> UIImage? in
+                 return UIImage(data: data)
+             })
+             .sink(receiveCompletion: NetworkManager.shared.handleCompletion, receiveValue: { [weak self] returnedImage in
+                 self?.image = returnedImage
+                 self?.imageSubscription?.cancel()
+             })
+     }
+
+ }
+ */

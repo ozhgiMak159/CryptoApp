@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @State private var showPortfolio: Bool = false 
     
     var body: some View {
@@ -19,7 +19,9 @@ struct HomeView: View {
             VStack {
                 HomeHeader(showPortfolio: $showPortfolio)
                     columnTitle
-    
+                
+                //????
+                
                 if !showPortfolio {
                     allCoinsList
                         .transition(.move(edge: .leading))
@@ -78,7 +80,7 @@ struct HomeHeader: View {
 extension HomeView {
     private var allCoinsList: some View {
         List {
-            ForEach(vm.allCoins) { coin in
+            ForEach(homeViewModel.allCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: false)
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 10))
             }
@@ -89,7 +91,7 @@ extension HomeView {
     
     private var portfolioCoinsList: some View {
         List {
-            ForEach(vm.portfolioCoin) { coin in
+            ForEach(homeViewModel.portfolioCoin) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 10))
             }
@@ -112,6 +114,5 @@ extension HomeView {
         .foregroundColor(Color.theme.secondaryTextColor)
         .padding(.horizontal)
     }
-    
     
 }
