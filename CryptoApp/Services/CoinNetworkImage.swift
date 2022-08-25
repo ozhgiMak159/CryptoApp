@@ -14,8 +14,6 @@ class CoinNetworkImage {
     
     private var imageSubscription: AnyCancellable?
     private let coin: CoinModel
-    private let fileManager = LocalFileManager.shared
-    private let folderName = "coin_images"
     private let imageName: String
     
     init(coin: CoinModel) {
@@ -25,15 +23,16 @@ class CoinNetworkImage {
     }
     
     private func getCoinImage() {
-        if let saveImage = fileManager.getImage(imageName: imageName, folderName: folderName) {
+        if let saveImage = LocalFileManager.shared.getImage(imageName: imageName, folderName: "coin_images") {
             image = saveImage
             print("Retrieved image from File Manager!")
+            // Сохранения в кэш
         } else {
             downloadCoinImage()
             print("Downloading image now")
+            // Загруска изи сети
         }
     }
-    
     
     private func downloadCoinImage() {
         guard let url = URL(string: coin.image) else { return }
@@ -46,11 +45,8 @@ class CoinNetworkImage {
                 guard let self = self, let downloadedImage = returnedImage else { return }
                 self.image = downloadedImage
                 self.imageSubscription?.cancel()
-                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
+                LocalFileManager.shared.saveImage(image: downloadedImage, imageName: self.imageName, folderName: "coin_images")
             })
     }
-    
-    
-    
-    
+
 }

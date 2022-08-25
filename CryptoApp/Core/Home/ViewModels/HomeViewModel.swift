@@ -42,10 +42,7 @@ class HomeViewModel: ObservableObject {
     }
     
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
-        guard !text.isEmpty else {
-            return coins
-        }
-        
+        guard !text.isEmpty else { return coins }
         let lowercaseText = text.lowercased()
         
         return coins.filter { (coin) -> Bool in
@@ -57,26 +54,4 @@ class HomeViewModel: ObservableObject {
 
 }
 
-/*
- class CoinDataManager {
 
-     @Published var allCoins: [CoinModel] = []
-     var coinSubscription: AnyCancellable?
-     
-     init() {
-         getCoins()
-     }
-     
-     private func getCoins() {
-         guard let url = URL(string: Url.coinUrl.rawValue) else { return }
-         
-         coinSubscription = NetworkManager.shared.download(url: url)
-             .decode(type: [CoinModel].self, decoder: JSONDecoder())
-             .sink(receiveCompletion: NetworkManager.shared.handleCompletion, receiveValue: { [weak self] returnedCoins in
-                 self?.allCoins = returnedCoins
-                 self?.coinSubscription?.cancel()
-             })
-     }
-  
- }
- */

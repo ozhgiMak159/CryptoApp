@@ -13,7 +13,6 @@ class LocalFileManager {
     private init() {}
     
     func saveImage(image: UIImage, imageName: String, folderName: String) {
-        
         createFolderIfNeeded(folderName: folderName)
         
         guard let data = image.pngData(),
@@ -21,9 +20,10 @@ class LocalFileManager {
         
         do {
             try data.write(to: url)
-        } catch let error {
-            print("Error saving image. ImageName: \(imageName). \(error)")
+        } catch {
+            print("Error saving image. ImageName: \(imageName)")
         }
+        
     }
     
     func getImage(imageName: String, folderName: String) -> UIImage? {
@@ -32,23 +32,20 @@ class LocalFileManager {
         return UIImage(contentsOfFile: url.path)
     }
     
-    
-    
     private func createFolderIfNeeded(folderName: String) {
         guard let url = getURLForFolder(folderName: folderName) else { return }
         
         if !FileManager.default.fileExists(atPath: url.path) {
             do {
                 try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
-            } catch let error {
-                print("Error creating directory. FolderName: \(folderName). \(error)")
+            } catch {
+                print("Error creating directory. FolderName: \(folderName).")
             }
         }
     }
     
     private func getURLForFolder(folderName: String) -> URL? {
         guard let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else { return nil }
-        
         return url.appendingPathComponent(folderName)
     }
     
