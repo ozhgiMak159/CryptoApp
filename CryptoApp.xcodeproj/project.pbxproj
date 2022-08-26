@@ -36,6 +36,7 @@
 		B5E4D97C28B8C2990003375A /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4D97B28B8C2990003375A /* MarketDataService.swift */; };
 		B5E4D97E28B8C96F0003375A /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4D97D28B8C96F0003375A /* PortfolioView.swift */; };
 		B5E4D98028B8CB4A0003375A /* XMarksButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4D97F28B8CB4A0003375A /* XMarksButton.swift */; };
+		B5E4D98228B8CDAC0003375A /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4D98128B8CDAC0003375A /* CoinLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		B5E4D97B28B8C2990003375A /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
 		B5E4D97D28B8C96F0003375A /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		B5E4D97F28B8CB4A0003375A /* XMarksButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarksButton.swift; sourceTree = "<group>"; };
+		B5E4D98128B8CDAC0003375A /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			children = (
 				B590FF4E28B6026E00EF2D04 /* CoinImageViewModel.swift */,
 				B590FF4A28B5FD8900EF2D04 /* CoinImageView.swift */,
+				B5E4D98128B8CDAC0003375A /* CoinLogoView.swift */,
 			);
 			path = CoinImage;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				B590FF4D28B5FFE100EF2D04 /* CoinNetworkImage.swift in Sources */,
 				B590FF4628B5E5E000EF2D04 /* CoinNetworkManager.swift in Sources */,
 				B5E4D97C28B8C2990003375A /* MarketDataService.swift in Sources */,
+				B5E4D98228B8CDAC0003375A /* CoinLogoView.swift in Sources */,
 				B590FF4828B5F36D00EF2D04 /* NetworkManager.swift in Sources */,
 				B590FF5228B63A8500EF2D04 /* CryptoURL.swift in Sources */,
 				B5E4D97A28B8BFE70003375A /* MarketDataModel.swift in Sources */,
