@@ -10,14 +10,19 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
-    @State private var showPortfolio: Bool = false 
+    @State private var showPortfolio: Bool = false
+    @State private var showPortfolioView: Bool = false
     
     var body: some View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
+                .sheet(isPresented: $showPortfolioView) {
+                    PortfolioView()
+                        .environmentObject(homeViewModel)
+                }
             VStack {
-                HomeHeader(showPortfolio: $showPortfolio)
+                HomeHeader(showPortfolio: $showPortfolio, showPortfolioView: $showPortfolioView)
                 HomeStatisticView(showPortfolio: $showPortfolio)
                 SearchBarView(searchText: $homeViewModel.searchText)
                     columnTitle
@@ -49,11 +54,17 @@ struct HomeView_Previews: PreviewProvider {
 
 struct HomeHeader: View {
     @Binding var showPortfolio: Bool
+    @Binding var showPortfolioView: Bool
     
     var body: some View {
         HStack {
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
                 .animation(.none)
+                .onTapGesture {
+                    if showPortfolio {
+                        showPortfolioView.toggle()
+                    }
+                }
                 .background(
                     CircleButtonAnimationView(animate: $showPortfolio)
                 )
