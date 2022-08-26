@@ -32,18 +32,7 @@ struct PortfolioView: View {
                     XMarksButton()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 10) {
-                        Image(systemName: "checkmark")
-                            .opacity(showCheckmark ? 1.0 : 0.0)
-                        
-                        Button {
-                            <#code#>
-                        } label: {
-                            Text("Save".uppercased())
-                        }
-
-                    }
-                    .font(.headline)
+                    trailingNavBarButtons
                 }
                 
             }
@@ -122,5 +111,46 @@ extension PortfolioView {
         .font(.headline)
     }
     
+    private var trailingNavBarButtons: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "checkmark")
+                .opacity(showCheckmark ? 1.0 : 0.0)
+            
+            Button {
+                saveButtonPress()
+            } label: {
+                Text("Save".uppercased())
+            }
+            .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0
+            )
+
+        }
+        .font(.headline)
+    }
+    
+    private func saveButtonPress() {
+        
+        guard let coin = selectedCoin else { return }
+        
+        withAnimation(.easeIn) {
+            showCheckmark = true
+            removeSelectedCoin()
+     
+        }
+        
+        UIApplication.shared.endEnditing()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation(.easeOut) {
+                showCheckmark = false
+            }
+        }
+        
+    }
+    
+    private func removeSelectedCoin() {
+        selectedCoin = nil
+        vm.searchText = ""
+    }
     
 }
