@@ -17,7 +17,7 @@ class CoinNetworkManager {
         getCoins()
     }
     
-    private func getCoins() {
+    func getCoins() {
         guard let url = URL(string: CryptoURL.coinUrl.rawValue) else { return }
         
         coinSubscription = NetworkManager.shared.download(url: url)

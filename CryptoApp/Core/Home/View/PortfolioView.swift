@@ -73,7 +73,6 @@ extension PortfolioView {
                                         : Color.clear
                                         ,lineWidth: 1)
                         )
-                        
                 }
             }
             .frame(height: 120)
