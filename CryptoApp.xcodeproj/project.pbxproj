@@ -157,9 +157,9 @@
 		B528B96928B4A349003276C1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B528B96A28B4A351003276C1 /* Home */,
 				B53178AD28BC7E8D00E06388 /* Detail */,
 				B528B96F28B4A65E003276C1 /* Components */,
-				B528B96A28B4A351003276C1 /* Home */,
 			);
 			path = Core;
 			sourceTree = "<group>";

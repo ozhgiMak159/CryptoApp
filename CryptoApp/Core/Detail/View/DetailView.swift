@@ -23,6 +23,7 @@ struct DetailLoadingView: View {
 struct DetailView: View {
     
     @StateObject var vm: DetailViewModel
+    
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())

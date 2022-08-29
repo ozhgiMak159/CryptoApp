@@ -111,8 +111,6 @@ extension HomeView {
         .listStyle(PlainListStyle())
     }
     
-   
-    
     private var portfolioCoinsList: some View {
         List {
             ForEach(homeViewModel.portfolioCoin) { coin in
