@@ -23,6 +23,8 @@
 		B53178B328BC8E7D00E06388 /* CoinDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178B228BC8E7D00E06388 /* CoinDetailModel.swift */; };
 		B53178B528BC920000E06388 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178B428BC920000E06388 /* DetailViewModel.swift */; };
 		B53178B728BC925200E06388 /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178B628BC925200E06388 /* CoinDetailDataService.swift */; };
+		B53178B928BCCC6200E06388 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178B828BCCC6200E06388 /* ChartView.swift */; };
+		B53178BB28BCD78700E06388 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178BA28BCD78700E06388 /* Date.swift */; };
 		B590FF4328B5D87900EF2D04 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590FF4228B5D87900EF2D04 /* HomeViewModel.swift */; };
 		B590FF4628B5E5E000EF2D04 /* CoinNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590FF4528B5E5E000EF2D04 /* CoinNetworkManager.swift */; };
 		B590FF4828B5F36D00EF2D04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590FF4728B5F36D00EF2D04 /* NetworkManager.swift */; };
@@ -64,6 +66,8 @@
 		B53178B228BC8E7D00E06388 /* CoinDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailModel.swift; sourceTree = "<group>"; };
 		B53178B428BC920000E06388 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B53178B628BC925200E06388 /* CoinDetailDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailDataService.swift; sourceTree = "<group>"; };
+		B53178B828BCCC6200E06388 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		B53178BA28BCD78700E06388 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B590FF4228B5D87900EF2D04 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B590FF4528B5E5E000EF2D04 /* CoinNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNetworkManager.swift; sourceTree = "<group>"; };
 		B590FF4728B5F36D00EF2D04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				B528B97A28B4C879003276C1 /* PriviewProvider.swift */,
 				B528B97C28B4CF96003276C1 /* Double.swift */,
 				B599C9A528B74DE400EB5A4A /* UIApplication.swift */,
+				B53178BA28BCD78700E06388 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				B53178B028BC7EF500E06388 /* DetailView.swift */,
+				B53178B828BCCC6200E06388 /* ChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				B599C9A128B733DF00EB5A4A /* LocalFileManager.swift in Sources */,
 				B599C9A428B7465100EB5A4A /* SearchBarView.swift in Sources */,
 				B5D6D06D28B9D64300368F82 /* PortfolioDateService.swift in Sources */,
+				B53178B928BCCC6200E06388 /* ChartView.swift in Sources */,
 				B528B97228B4A6AF003276C1 /* CircleButtonView.swift in Sources */,
 				B590FF4F28B6026E00EF2D04 /* CoinImageViewModel.swift in Sources */,
 				B5D6D06B28B9D56E00368F82 /* PortfolioContainer.xcdatamodeld in Sources */,
@@ -378,6 +385,7 @@
 				B5E4D98028B8CB4A0003375A /* XMarksButton.swift in Sources */,
 				B53178B128BC7EF500E06388 /* DetailView.swift in Sources */,
 				B528B96828B49E9F003276C1 /* Color.swift in Sources */,
+				B53178BB28BCD78700E06388 /* Date.swift in Sources */,
 				B528B97428B4ADD1003276C1 /* CircleButtonAnimationView.swift in Sources */,
 				B528B97D28B4CF96003276C1 /* Double.swift in Sources */,
 				B528B97728B4B5DE003276C1 /* CoinModel.swift in Sources */,
