@@ -47,14 +47,16 @@ struct DetailView: View {
                     additionalTitle
                     Divider()
                     additionalGrid
-                    
                     website
-                    
                 }
                 .padding()
             }
             
         }
+        .background(
+            Color.theme.background
+                .ignoresSafeArea()
+        )
         .navigationTitle(vm.coin.name)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

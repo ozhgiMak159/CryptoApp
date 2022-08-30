@@ -25,11 +25,11 @@ class CoinNetworkImage {
     private func getCoinImage() {
         if let saveImage = LocalFileManager.shared.getImage(imageName: imageName, folderName: "coin_images") {
             image = saveImage
-            print("Retrieved image from File Manager!")
+          //  print("Retrieved image from File Manager!")
             // Сохранения в кэш
         } else {
             downloadCoinImage()
-            print("Downloading image now")
+           // print("Downloading image now")
             // Загруска изи сети
         }
     }
@@ -41,6 +41,7 @@ class CoinNetworkImage {
             .tryMap({ (data) -> UIImage? in
                 return UIImage(data: data)
             })
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetworkManager.shared.handleCompletion, receiveValue: { [weak self] returnedImage in
                 guard let self = self, let downloadedImage = returnedImage else { return }
                 self.image = downloadedImage
