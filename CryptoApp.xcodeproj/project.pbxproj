@@ -25,6 +25,8 @@
 		B53178B728BC925200E06388 /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178B628BC925200E06388 /* CoinDetailDataService.swift */; };
 		B53178B928BCCC6200E06388 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178B828BCCC6200E06388 /* ChartView.swift */; };
 		B53178BB28BCD78700E06388 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53178BA28BCD78700E06388 /* Date.swift */; };
+		B54D92E628BDCDBB00633285 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54D92E528BDCDBB00633285 /* String.swift */; };
+		B54D92EA28BDDAED00633285 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54D92E928BDDAED00633285 /* SettingsView.swift */; };
 		B590FF4328B5D87900EF2D04 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590FF4228B5D87900EF2D04 /* HomeViewModel.swift */; };
 		B590FF4628B5E5E000EF2D04 /* CoinNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590FF4528B5E5E000EF2D04 /* CoinNetworkManager.swift */; };
 		B590FF4828B5F36D00EF2D04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590FF4728B5F36D00EF2D04 /* NetworkManager.swift */; };
@@ -68,6 +70,8 @@
 		B53178B628BC925200E06388 /* CoinDetailDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailDataService.swift; sourceTree = "<group>"; };
 		B53178B828BCCC6200E06388 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		B53178BA28BCD78700E06388 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		B54D92E528BDCDBB00633285 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B54D92E928BDDAED00633285 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B590FF4228B5D87900EF2D04 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B590FF4528B5E5E000EF2D04 /* CoinNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNetworkManager.swift; sourceTree = "<group>"; };
 		B590FF4728B5F36D00EF2D04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				B528B97C28B4CF96003276C1 /* Double.swift */,
 				B599C9A528B74DE400EB5A4A /* UIApplication.swift */,
 				B53178BA28BCD78700E06388 /* Date.swift */,
+				B54D92E528BDCDBB00633285 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 		B528B96928B4A349003276C1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B54D92E728BDDA0700633285 /* Settings */,
 				B528B96A28B4A351003276C1 /* Home */,
 				B53178AD28BC7E8D00E06388 /* Detail */,
 				B528B96F28B4A65E003276C1 /* Components */,
@@ -250,6 +256,22 @@
 				B53178B428BC920000E06388 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B54D92E728BDDA0700633285 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B54D92E828BDDA5800633285 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B54D92E828BDDA5800633285 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B54D92E928BDDAED00633285 /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B590FF4428B5E56B00EF2D04 /* Services */ = {
@@ -354,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54D92E628BDCDBB00633285 /* String.swift in Sources */,
 				B528B97928B4C807003276C1 /* CoinRowView.swift in Sources */,
 				B599C9A828B76B3B00EB5A4A /* StatisticModel.swift in Sources */,
 				B590FF4328B5D87900EF2D04 /* HomeViewModel.swift in Sources */,
@@ -365,6 +388,7 @@
 				B590FF4828B5F36D00EF2D04 /* NetworkManager.swift in Sources */,
 				B590FF5228B63A8500EF2D04 /* CryptoURL.swift in Sources */,
 				B5E4D97A28B8BFE70003375A /* MarketDataModel.swift in Sources */,
+				B54D92EA28BDDAED00633285 /* SettingsView.swift in Sources */,
 				B528B97B28B4C879003276C1 /* PriviewProvider.swift in Sources */,
 				B590FF4B28B5FD8A00EF2D04 /* CoinImageView.swift in Sources */,
 				B599C9AA28B76E5300EB5A4A /* StatisticView.swift in Sources */,

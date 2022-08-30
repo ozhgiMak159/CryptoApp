@@ -10,10 +10,13 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
+    
     @State private var showPortfolio: Bool = false
     @State private var showPortfolioView: Bool = false
-    @State private var selectedCoin: CoinModel? = nil
+    @State private var showSettingsView: Bool = false
     @State private var showDetailView: Bool = false
+    
+    @State private var selectedCoin: CoinModel? = nil
     
     var body: some View {
         ZStack {
@@ -24,7 +27,7 @@ struct HomeView: View {
                         .environmentObject(homeViewModel)
                 }
             VStack {
-                HomeHeader(showPortfolio: $showPortfolio, showPortfolioView: $showPortfolioView)
+                HomeHeader(showPortfolio: $showPortfolio, showPortfolioView: $showPortfolioView, showSettingsView: $showSettingsView)
                 HomeStatisticView(showPortfolio: $showPortfolio)
                 SearchBarView(searchText: $homeViewModel.searchText)
                     columnTitle
@@ -40,6 +43,11 @@ struct HomeView: View {
                 }
                 Spacer(minLength: 0)
             }
+            .sheet(isPresented: $showSettingsView, content: {
+                SettingsView()
+            })
+            
+            
             .background(
                 NavigationLink(isActive: $showDetailView, destination: {
                     DetailLoadingView(coin: $selectedCoin)
@@ -64,6 +72,7 @@ struct HomeView_Previews: PreviewProvider {
 struct HomeHeader: View {
     @Binding var showPortfolio: Bool
     @Binding var showPortfolioView: Bool
+    @Binding var showSettingsView: Bool
     
     var body: some View {
         HStack {
@@ -72,6 +81,8 @@ struct HomeHeader: View {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background(
