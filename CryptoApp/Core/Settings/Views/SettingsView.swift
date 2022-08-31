@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     let personalURL = URL(string: "https://github.com/ozhgiMak159")!
     let appGitHubUrl = URL(string: "https://github.com/ozhgiMak159/CryptoApp")!
     let apiCoin = URL(string: "https://www.coingecko.com/ru")!
@@ -34,7 +35,9 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    XMarksButton()
+                    XMarksButton {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
         }
