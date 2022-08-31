@@ -11,7 +11,6 @@ struct HomeView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
-    
     @State private var showPortfolio: Bool = false
     @State private var showPortfolioView: Bool = false
     @State private var showSettingsView: Bool = false
@@ -130,17 +129,14 @@ extension HomeView {
         }
         .listStyle(PlainListStyle())
     }
-    
-    // Удаления из базы
-    func deleteCoin(indexSet: IndexSet) {
-//        guard let index = indexSet.first else { return }
-//        let entity =
-    }
-    
+        
     private var portfolioCoinsList: some View {
         List {
             ForEach(homeViewModel.portfolioCoin) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
+//                    .swipeActions {
+//                        Image("delete")
+//                    }
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
                         segue(coin: coin)
@@ -148,7 +144,6 @@ extension HomeView {
                     .listRowBackground(Color.theme.background)
             }
             .onDelete(perform: homeViewModel.delete)
-            
         }
         .listStyle(PlainListStyle())
     }
