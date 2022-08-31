@@ -16,7 +16,6 @@ struct XMarksButton: View {
             Image(systemName: "xmark")
                 .font(.headline)
         }
-
     }
 }
 

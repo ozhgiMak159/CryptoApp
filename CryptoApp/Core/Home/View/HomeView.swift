@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
+    
     @State private var showPortfolio: Bool = false
     @State private var showPortfolioView: Bool = false
     @State private var showSettingsView: Bool = false
@@ -130,6 +131,12 @@ extension HomeView {
         .listStyle(PlainListStyle())
     }
     
+    // Удаления из базы
+    func deleteCoin(indexSet: IndexSet) {
+//        guard let index = indexSet.first else { return }
+//        let entity =
+    }
+    
     private var portfolioCoinsList: some View {
         List {
             ForEach(homeViewModel.portfolioCoin) { coin in
@@ -140,10 +147,13 @@ extension HomeView {
                     }
                     .listRowBackground(Color.theme.background)
             }
+            .onDelete(perform: homeViewModel.delete)
             
         }
         .listStyle(PlainListStyle())
     }
+    
+    
     
     private var portfolioEmptyText: some View {
         Text("You haven't added any coins to your portfolio yet! Click the + button to get started")

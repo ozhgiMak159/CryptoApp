@@ -65,6 +65,10 @@ class HomeViewModel: ObservableObject {
         portfolioDataService.updatePortfolio(coin: coin, amount: amount)
     }
     
+    func delete(index: IndexSet) {
+        portfolioDataService.deleteSet(indexSet: index)
+    }
+    
     func reloadData() {
         isLoading = true
         coinDataService.getCoins()
