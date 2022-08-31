@@ -70,7 +70,7 @@ class PortfolioDateService {
         guard let index = indexSet.first else { return }
         let entity = savedEntities[index]
         container.viewContext.delete(entity)
-        save()
+        applyChanges()
     }
     
     private func save() {
