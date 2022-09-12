@@ -132,7 +132,6 @@
 				B528B97528B4B5C6003276C1 /* Models */,
 				B528B96928B4A349003276C1 /* Core */,
 				B528B96628B49E77003276C1 /* Extensions */,
-				B528B95628B49A29003276C1 /* CryptoAppApp.swift */,
 				B59FF16128BF2F630036D69F /* Resource */,
 				B528B95C28B49A2A003276C1 /* Preview Content */,
 			);
@@ -328,6 +327,7 @@
 		B59FF16128BF2F630036D69F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B528B95628B49A29003276C1 /* CryptoAppApp.swift */,
 				B528B95A28B49A2A003276C1 /* Assets.xcassets */,
 			);
 			path = Resource;

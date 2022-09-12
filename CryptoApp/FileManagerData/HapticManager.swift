@@ -14,6 +14,4 @@ class HapticManager {
     static func notification(type: UINotificationFeedbackGenerator.FeedbackType) {
         generator.notificationOccurred(type)
     }
-    
-    
 }

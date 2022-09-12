@@ -134,9 +134,6 @@ extension HomeView {
         List {
             ForEach(homeViewModel.portfolioCoin) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
-//                    .swipeActions {
-//                        Image("delete")
-//                    }
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
                         segue(coin: coin)
